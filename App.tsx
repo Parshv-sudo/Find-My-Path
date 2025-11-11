@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -9,6 +8,7 @@ import SkillDevPage from './components/SkillDevPage';
 import PathFinderPage from './components/PathFinderPage';
 import DashboardPage from './components/DashboardPage';
 import Chatbot from './components/Chatbot';
+import FinancialAidPage from './components/FinancialAidPage';
 import { Page, DashboardItem } from './types';
 import { CAREER_DATA } from './constants';
 
@@ -42,6 +42,8 @@ const App: React.FC = () => {
         return <SkillDevPage addToDashboard={addToDashboard} />;
       case Page.PathFinder:
         return <PathFinderPage />;
+      case Page.FinancialAid:
+        return <FinancialAidPage />;
       case Page.Dashboard:
         return <DashboardPage items={dashboardItems} setItems={setDashboardItems} />;
       default:

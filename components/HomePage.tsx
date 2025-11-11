@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Page } from '../types';
-import { BookOpenIcon, BriefcaseIcon, LightBulbIcon, AcademicCapIcon, RocketLaunchIcon } from './icons';
+import { BookOpenIcon, BriefcaseIcon, LightBulbIcon, AcademicCapIcon, RocketLaunchIcon, CurrencyDollarIcon } from './icons';
 import { MOTIVATIONAL_QUOTES } from '../constants';
 
 interface HomePageProps {
@@ -47,9 +46,9 @@ const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
               <QuickNavCard title="Career Explorer" page={Page.CareerExplorer} icon={<BriefcaseIcon className="h-8 w-8"/>} navigate={navigate} />
               <QuickNavCard title="Exams Guide" page={Page.Exams} icon={<BookOpenIcon className="h-8 w-8"/>} navigate={navigate} />
-              <QuickNavCard title="College Guide" page={Page.Exams} icon={<AcademicCapIcon className="h-8 w-8"/>} navigate={navigate} />
               <QuickNavCard title="Skill Boost" page={Page.Skills} icon={<LightBulbIcon className="h-8 w-8"/>} navigate={navigate} />
-              <QuickNavCard title="Mentor Connect" page={Page.MentorConnect} icon={<RocketLaunchIcon className="h-8 w-8"/>} navigate={navigate} />
+              <QuickNavCard title="Financial Aid" page={Page.FinancialAid} icon={<CurrencyDollarIcon className="h-8 w-8"/>} navigate={navigate} />
+              <QuickNavCard title="PathFinder AI" page={Page.PathFinder} icon={<RocketLaunchIcon className="h-8 w-8"/>} navigate={navigate} />
           </div>
       </section>
 

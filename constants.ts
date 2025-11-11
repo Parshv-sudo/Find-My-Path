@@ -1,5 +1,4 @@
-
-import { Career, Exam, Skill } from './types';
+import { Career, Exam, Skill, FinancialAidResource } from './types';
 import { BriefcaseIcon, CodeBracketIcon, HeartIcon, LightBulbIcon, PencilIcon, UsersIcon } from './components/icons';
 
 export const CAREER_DATA: Career[] = [
@@ -62,12 +61,12 @@ export const EXAM_DATA: Exam[] = [
 ];
 
 export const SKILL_DATA: Skill[] = [
-  { id: 'comm', title: 'Effective Communication', category: 'Soft Skills', description: 'Learn to convey your ideas clearly and confidently in any setting.', icon: UsersIcon },
-  { id: 'leader', title: 'Leadership', category: 'Soft Skills', description: 'Develop the skills to motivate and guide teams towards a common goal.', icon: BriefcaseIcon },
-  { id: 'pm', title: 'Problem Solving', category: 'Analytical Skills', description: 'Master techniques to break down complex problems and find innovative solutions.', icon: LightBulbIcon },
-  { id: 'creative', title: 'Creative Thinking', category: 'Personal Growth', description: 'Unlock your potential for innovation and thinking outside the box.', icon: PencilIcon },
-  { id: 'emotional', title: 'Emotional Intelligence', category: 'Personal Growth', description: 'Understand and manage your own emotions, and recognize them in others.', icon: HeartIcon },
-  { id: 'coding', title: 'Intro to Coding', category: 'Technical Skills', description: 'Get started with the fundamentals of programming and computational thinking.', icon: CodeBracketIcon },
+  { id: 'comm', title: 'Effective Communication', category: 'Soft Skills', description: 'Learn to convey your ideas clearly and confidently in any setting.', icon: UsersIcon, relatedCareers: ['Product Management', 'Marketing', 'Law'] },
+  { id: 'leader', title: 'Leadership', category: 'Soft Skills', description: 'Develop the skills to motivate and guide teams towards a common goal.', icon: BriefcaseIcon, relatedCareers: ['Product Management', 'Consulting', 'Entrepreneurship'] },
+  { id: 'pm', title: 'Problem Solving', category: 'Analytical Skills', description: 'Master techniques to break down complex problems and find innovative solutions.', icon: LightBulbIcon, relatedCareers: ['Software Engineering', 'Data Science', 'Consulting'] },
+  { id: 'creative', title: 'Creative Thinking', category: 'Personal Growth', description: 'Unlock your potential for innovation and thinking outside the box.', icon: PencilIcon, relatedCareers: ['UX/UI Design', 'Marketing', 'Content Creation'] },
+  { id: 'emotional', title: 'Emotional Intelligence', category: 'Personal Growth', description: 'Understand and manage your own emotions, and recognize them in others.', icon: HeartIcon, relatedCareers: ['Human Resources', 'Sales', 'Healthcare'] },
+  { id: 'coding', title: 'Intro to Coding', category: 'Technical Skills', description: 'Get started with the fundamentals of programming and computational thinking.', icon: CodeBracketIcon, relatedCareers: ['Software Engineering', 'Data Science', 'Web Development'] },
 ];
 
 export const MOTIVATIONAL_QUOTES: string[] = [
@@ -77,4 +76,23 @@ export const MOTIVATIONAL_QUOTES: string[] = [
     "Your limitation—it's only your imagination.",
     "The secret of getting ahead is getting started.",
     "Every path begins with one step."
+];
+
+export const FINANCIAL_AID_RESOURCES: FinancialAidResource[] = [
+    {
+        title: "Understanding Student Loans",
+        content: "Student loans can be a crucial part of funding your education. There are two main types: federal and private. Federal loans, offered by the government, usually have fixed interest rates and more flexible repayment options. Private loans are offered by banks and credit unions and can have variable or fixed interest rates. Always exhaust federal loan options before considering private ones. Key terms to know: principal, interest, term, and APR."
+    },
+    {
+        title: "How to Write a Winning Scholarship Essay",
+        content: "A great scholarship essay can make your application stand out. Start by understanding the prompt and the sponsoring organization's values. Brainstorm ideas and create an outline. Your introduction should grab the reader's attention. Use specific stories and examples to showcase your personality and achievements. Be authentic and passionate. Finally, proofread meticulously for any grammar or spelling errors."
+    },
+    {
+        title: "Navigating the FAFSA Application",
+        content: "The Free Application for Federal Student Aid (FAFSA) is your gateway to federal grants, work-study funds, and loans. You'll need your Social Security number, tax records, and bank statements. The application opens on October 1st each year. It's best to file as early as possible, as some aid is awarded on a first-come, first-served basis. Double-check all information for accuracy before submitting."
+    },
+    {
+        title: "Exploring Merit-Based vs. Need-Based Aid",
+        content: "Financial aid comes in two primary forms. Need-based aid is determined by your family's financial situation, calculated from your FAFSA. It includes Pell Grants and subsidized loans. Merit-based aid is awarded for academic, athletic, or artistic achievements, regardless of financial need. These are often scholarships from universities or private organizations."
+    }
 ];

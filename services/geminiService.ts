@@ -42,6 +42,45 @@ export async function getCareerRecommendations(interests: string, skills: string
   }
 }
 
+export async function getScholarshipRecommendations(level: string, field: string, keywords: string) {
+  try {
+    const response = await ai.models.generateContent({
+      model: "gemini-2.5-flash",
+      contents: `Based on the following student profile, suggest 5 relevant scholarships.
+      
+      Academic Level: "${level}"
+      Field of Study: "${field}"
+      Keywords: "${keywords}"
+      
+      For each scholarship, provide a scholarshipName, a brief description, eligibility criteria, the awardAmount, and a direct application link.`,
+      config: {
+        responseMimeType: "application/json",
+        responseSchema: {
+          type: Type.ARRAY,
+          items: {
+            type: Type.OBJECT,
+            properties: {
+              scholarshipName: { type: Type.STRING },
+              description: { type: Type.STRING },
+              eligibility: { type: Type.STRING },
+              awardAmount: { type: Type.STRING },
+              link: { type: Type.STRING, description: "A direct URL to the scholarship application page." }
+            },
+            required: ["scholarshipName", "description", "eligibility", "awardAmount", "link"]
+          }
+        }
+      }
+    });
+    
+    const jsonText = response.text.trim();
+    return JSON.parse(jsonText);
+
+  } catch (error) {
+    console.error("Error fetching scholarship recommendations:", error);
+    throw new Error("Failed to fetch scholarship recommendations.");
+  }
+}
+
 
 let chatInstance: Chat | null = null;
 

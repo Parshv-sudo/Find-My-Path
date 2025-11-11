@@ -12,6 +12,7 @@ export enum Page {
   Resources = 'Resources',
   Community = 'Community',
   About = 'About',
+  FinancialAid = 'FinancialAid',
 }
 
 export interface Career {
@@ -42,6 +43,7 @@ export interface Skill {
   description: string;
   category: string;
   icon: React.ComponentType<{ className?: string }>;
+  relatedCareers: string[];
 }
 
 export interface DashboardItem {
@@ -63,4 +65,17 @@ export interface Message {
   text: string;
   sender: 'user' | 'bot';
   loading?: boolean;
+}
+
+export interface Scholarship {
+    scholarshipName: string;
+    description: string;
+    eligibility: string;
+    awardAmount: string;
+    link: string;
+}
+
+export interface FinancialAidResource {
+    title: string;
+    content: string;
 }

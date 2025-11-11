@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Page } from '../types';
 import { CompassIcon, MenuIcon, XIcon, UserCircleIcon } from './icons';
@@ -36,6 +35,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, navigate, isAuthenticated,
     { page: Page.CareerExplorer, label: 'Career Explorer' },
     { page: Page.Exams, label: 'Exams' },
     { page: Page.Skills, label: 'Skill Boost' },
+    { page: Page.FinancialAid, label: 'Financial Aid' },
     { page: Page.PathFinder, label: 'PathFinder AI' },
   ];
 
